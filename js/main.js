@@ -85,18 +85,18 @@ Vue.component('newCard', {
         <div class="form_control">
                 
             <div class="form_name">
-                <input required type="text" v-model="name" id="name" placeholder="Введите название заметки"/>
+                <input maxlength="20" required type="text" v-model="name" id="name" placeholder="Введите название заметки"/>
             </div>
             
-            <input required type="text"  v-model="point_1" placeholder="Первый пункт"/>
+            <input maxlength="30" required type="text"  v-model="point_1" placeholder="Первый пункт"/>
             <br>
-            <input required type="text"  v-model="point_2" placeholder="Второй пункт"/>
+            <input maxlength="30" required type="text"  v-model="point_2" placeholder="Второй пункт"/>
             <br>
-            <input required type="text"  v-model="point_3" placeholder="Третий пункт"/> 
+            <input maxlength="30" required type="text"  v-model="point_3" placeholder="Третий пункт"/> 
             <br>
-            <input  type="text"  v-model="point_4"  placeholder="Четвертый пункт"/>
+            <input maxlength="30" type="text"  v-model="point_4"  placeholder="Четвертый пункт"/>
             <br>
-             <input type="text" v-model="point_5"  placeholder="Пятый пункт"/>
+             <input maxlength="30" type="text" v-model="point_5"  placeholder="Пятый пункт"/>
         </div>
             <div class="form_control">
                 <button class="btn">Отправить</button>
@@ -147,6 +147,8 @@ Vue.component('column_1', {
     template: `
         <section id="main" class="main-alt">
             <div class="column column_one">
+            <p class="name_column">Начало</p>
+            <p>---------------------------------------------------------------</p>
                 <div class="card" v-for="card in column_1">
                 <h3>{{ card.name }}</h3>
                     <ul class="tasks" v-for="task in card.points"
@@ -200,6 +202,8 @@ Vue.component('column_2', {
     template: `
         <section id="main" class="main-alt">
             <div class="column column_two">
+            <p class="name_column">В процессе</p>
+            <p>---------------------------------------------------------------</p>
                 <div class="card" v-for="card in column_2">
                 <h3>{{ card.name }}</h3>
                     <ul class="tasks" v-for="task in card.points"
@@ -248,6 +252,8 @@ Vue.component('column_3', {
     template: `
         <section id="main" class="main-alt">
             <div class="column column_three">
+            <p class="name_column">Завершено</p>
+            <p>---------------------------------------------------------------</p>
                 <div class="card" v-for="card in column_3">
                 <h3>{{ card.name }}</h3>
                     <ul class="tasks" v-for="task in card.points"
