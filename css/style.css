@@ -16,3 +16,35 @@ body {
     height: 60px;
     margin-bottom: 50px;
 }
+
+.column {
+    margin-left: 30px;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: auto;
+    font-size: 20pt;
+    border: 0;
+    background: white;
+    border-radius:10px;
+    box-shadow:12px 9px 10px 4px rgba(121,122,111,0.18);
+    background: linear-gradient(195deg, #e198bdcf, rgba(243, 238, 148, 0.96));
+
+}
+
+h2{
+    font-style: oblique;
+}
+.main_text {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+.text{
+    text-align: center;
+}
+
+.completed{
+    text-decoration: line-through;
+}
