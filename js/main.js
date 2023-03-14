@@ -46,6 +46,10 @@ Vue.component('component', {
                 this.errors.push()
             }
         })
+        eventBus.$on('addColumn_3', ColumnCard => {
+            this.column_3.push(ColumnCard)
+            this.column_2.splice(this.column_2.indexOf(ColumnCard), 1)
+        })
     }
 })
 

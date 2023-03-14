@@ -29,6 +29,7 @@ body {
     border-radius:10px;
     box-shadow:12px 9px 10px 4px rgba(121,122,111,0.18);
     background: linear-gradient(195deg, #e198bdcf, rgba(243, 238, 148, 0.96));
+    min-height: 450px;
 
 }
 
@@ -48,3 +49,4 @@ h2{
 .completed{
     text-decoration: line-through;
 }
+
