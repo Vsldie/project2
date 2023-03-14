@@ -34,6 +34,17 @@ Vue.component('component', {
                 this.errors.length = 0
                 this.errors.push()
             }
+
+        })
+        eventBus.$on('addColumn_2', ColumnCard => {
+            if (this.column_2.length < 5) {
+                this.errors.length = 0
+                this.column_2.push(ColumnCard)
+                this.column_1.splice(this.column_1.indexOf(ColumnCard), 1)
+            } else {
+                this.errors.length = 0
+                this.errors.push()
+            }
         })
     }
 })
@@ -238,7 +249,7 @@ Vue.component('column_3', {
         card: {
             type: Object,
         },
-    },
+    }
 })
 
 
