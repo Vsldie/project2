@@ -44,21 +44,20 @@ Vue.component('component', {
                 this.errors.length = 0
                 this.column_2.push(ColumnCard)
                 this.column_1.splice(this.column_1.indexOf(ColumnCard), 1)
-                this.saveColumn_1();
                 this.saveColumn_2();
             } else {
                 this.errors.length = 0
                 this.errors.push()
             }
+
         })
         eventBus.$on('addColumn_3', ColumnCard => {
             this.column_3.push(ColumnCard)
             this.column_2.splice(this.column_2.indexOf(ColumnCard), 1)
-            this.saveColumn_2();
             this.saveColumn_3();
         })
     },
-    methods: {
+    methods:{
         saveColumn_1(){
             localStorage.setItem('column_1', JSON.stringify(this.column_1));
         },
@@ -68,7 +67,18 @@ Vue.component('component', {
         saveColumn_3(){
             localStorage.setItem('column_3', JSON.stringify(this.column_3));
         }
-    }
+    },
+    watch: {
+        column_1(newValue) {//метод для сохранения первого столбца
+            localStorage.setItem("column_1", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        },
+        column_2(newValue) {//метод для сохранения второго столбца
+            localStorage.setItem("column_2", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        },
+        column_3(newValue) {//метод для сохранения третьего столбца
+            localStorage.setItem("column_3", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        }
+    },
 })
 
 Vue.component('newCard', {
@@ -241,9 +251,8 @@ Vue.component('column_2', {
             if (( ColumnCard.status / count) * 100 >= 100 ) {
                 eventBus.$emit('addColumn_3', ColumnCard)
                 ColumnCard.date = new Date().toLocaleString()
-
-
             }
+
         }
     }
 })
@@ -264,7 +273,7 @@ Vue.component('column_3', {
                         {{ task.name }}
                         </li>
                     </ul><br>
-                    
+                  
                         <p>{{ card.date }}</p>
                 </div>
             </div>
