@@ -38,7 +38,8 @@ Vue.component('component', {
                 this.column_2.push(ColumnCard)
                 this.column_1.splice(this.column_1.indexOf(ColumnCard), 1)
                 this.saveColumn_2();
-            }
+            }else if(this.column_2.length === 5){
+                alert('Завершите процесс во второй колонке')}
 
         })
         eventBus.$on('addColumn_3', ColumnCard => {
@@ -188,9 +189,8 @@ Vue.component('column_1', {
             }
             if ((ColumnCard.status / count) * 100 >= 50) {
                 eventBus.$emit('addColumn_2', ColumnCard)
-                this.column_1.splice(this.column_1.indexOf(ColumnCard), 0)
-            }
-        },
+                this.column_1.splice(this.column_1.indexOf(ColumnCard), 1)}
+        }
     },
 })
 
