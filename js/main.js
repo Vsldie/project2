@@ -69,14 +69,14 @@ Vue.component('component', {
         }
     },
     watch: {
-        column_1(newValue) {//метод для сохранения первого столбца
-            localStorage.setItem("column_1", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        column_1(newValue) {
+            localStorage.setItem("column_1", JSON.stringify(newValue));
         },
-        column_2(newValue) {//метод для сохранения второго столбца
-            localStorage.setItem("column_2", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        column_2(newValue) {
+            localStorage.setItem("column_2", JSON.stringify(newValue));
         },
-        column_3(newValue) {//метод для сохранения третьего столбца
-            localStorage.setItem("column_3", JSON.stringify(newValue));//setItem - собирает массив forBegin, JSON.stringify возвращает json-строку
+        column_3(newValue) {
+            localStorage.setItem("column_3", JSON.stringify(newValue));
         }
     },
 })
