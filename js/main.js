@@ -36,11 +36,11 @@ Vue.component('component', {
         eventBus.$on('addColumn_2', ColumnCard => {
             if (this.column_2.length < 5) {
                 this.column_2.push(ColumnCard)
-                this.column_1.splice(this.column_1.indexOf(ColumnCard), 1)
+                this.column_1.splice(this.column_1.indexOf(ColumnCard), 0)
                 this.saveColumn_2();
-            }else if(this.column_2.length === 5){
-                alert('Завершите процесс во второй колонке')}
-
+            }else{
+                alert('Завершите процесс во второй колонке');
+            }
         })
         eventBus.$on('addColumn_3', ColumnCard => {
             this.column_3.push(ColumnCard)
